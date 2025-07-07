@@ -29,6 +29,7 @@ def login():
         for u in db['usuarios']:
             if u['usuario'] == usuario and u['senha'] == senha:
                 session['usuario'] = usuario
+                session['funcao'] = u.get('funcao', 'adm')
                 return redirect(url_for('dashboard'))
         return render_template('login.html', erro='Credenciais inválidas')
     return render_template('login.html')
@@ -37,11 +38,18 @@ def login():
 @app.route('/dashboard')
 def dashboard():
     usuario = session.get('usuario')
+    funcao = session.get('funcao')
     if not usuario:
         return redirect(url_for('login'))
     db = load_db()
     pedidos = [p for p in db['pedidos'] if p['status'] != 'finalizado']
-    return render_template('dashboard.html', usuario=usuario, pedidos=pedidos)
+    if funcao == 'garcom':
+        return redirect(url_for('garcom.mesas'))
+    if funcao == 'caixa':
+        return redirect(url_for('caixa.pedidos'))
+    if funcao == 'cozinha':
+        return redirect(url_for('cozinha.pendentes'))
+    return render_template('dashboard.html', usuario=usuario, pedidos=pedidos, funcao=funcao)
 
 
 if __name__ == '__main__':

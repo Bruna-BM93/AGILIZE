@@ -9,3 +9,24 @@
 {% endfor %}
 </ul>
 {% endblock %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+        <title>Dashboard ADM - Agilize</title>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+            </head>
+            <body>
+                <h1>Bem-vindo, {{ usuario }}!</h1>
+                    <div class="acessos">
+                            <a href="/pedido" class="btn-acesso pedido">🧾 Pedidos</a>
+                                    <a href="/caixa" class="btn-acesso caixa">💰 Caixa</a>
+                                            <a href="/cozinha" class="btn-acesso cozinha">👨‍🍳 Cozinha</a>
+                                                    <a href="/gestao" class="btn-acesso gestao">📊 Gestão</a>
+                                                        </div>
+                                                        </body>
+                                                        </html>
+                                                        """
+
+                                                        dashboard_path = base_path / "templates" / "dashboard.html"
+                                                        dashboard_path.write_text(dashboard_html)

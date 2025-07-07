@@ -1,9 +1,12 @@
-{
-    "usuarios": [{"usuario": "admin", "senha": "123"}],
+  "usuarios": [
+        {"usuario": "admin", "senha": "123", "funcao": "adm"},
+        {"usuario": "garcom1", "senha": "123", "funcao": "garcom"},
+        {"usuario": "cozinha1", "senha": "123", "funcao": "cozinha"},
+        {"usuario": "caixa1", "senha": "123", "funcao": "caixa"}
+    ],
     "estoque": [],
     "pedidos": [
         {"mesa": 1, "status": "aguardando"},
         {"mesa": 2, "status": "pronto"}
     ]
 }
-
