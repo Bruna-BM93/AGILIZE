@@ -1,0 +1,9 @@
+{
+    "usuarios": [{"usuario": "admin", "senha": "123"}],
+    "estoque": [],
+    "pedidos": [
+        {"mesa": 1, "status": "aguardando"},
+        {"mesa": 2, "status": "pronto"}
+    ]
+}
+

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Cozinha - Pendentes{% endblock %}
+{% block content %}
+<h2>Pedidos Pendentes</h2>
+<ul>
+    {% for p in pedidos %}
+    <li>Mesa {{ p.mesa }} - {{ p.status }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
